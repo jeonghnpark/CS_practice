@@ -18,6 +18,27 @@ namespace MSDN_practice
             Console.WriteLine($"Hello,{name}. It's a pleasure to meet you ");
             Console.WriteLine($"On {date:d} price of {item.Name} was {item.Price:C2}");
 
+            var account = new BankAccount("Park", 1000);
+            Console.WriteLine($"Name: {account.Owner} Balance: {account.Balance}");
+            account.MakeDeposit(100, DateTime.Now, "add 100");
+            Console.WriteLine($"Name: {account.Owner} Balance: {account.Balance}");
+            account.MakeWithdrawal(300, DateTime.Now, "minus 300"); 
+            Console.WriteLine($"Name: {account.Owner} Balance: {account.Balance}");
+
+            BankAccount invalidAccount;
+
+            try
+            {
+                invalidAccount = new BankAccount("invalid", -500);
+            }catch(ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine("exception caught for negative amount ");
+                Console.WriteLine(e.ToString());
+
+            }
+
         }
     }
+
+    
 }
