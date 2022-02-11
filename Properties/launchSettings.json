@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MSDN_practice": {
+      "commandName": "Project",
+      "commandLineArgs": "1 2 3"
+    }
+  }
+}
